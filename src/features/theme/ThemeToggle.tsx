@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
-
   useEffect(() => {
     console.log("resolvedTheme:", resolvedTheme);
   }, [resolvedTheme]);

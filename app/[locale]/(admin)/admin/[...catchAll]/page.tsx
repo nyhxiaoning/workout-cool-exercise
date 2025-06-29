@@ -1,5 +1,5 @@
-import { Page404 } from "@/widgets/404";
+import { notFound } from "next/navigation";
 
-export default function AdminCatchAll() {
-  return <Page404 />;
+export default function NotFoundPage() {
+  return notFound;
 }

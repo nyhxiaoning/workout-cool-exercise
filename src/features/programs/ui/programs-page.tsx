@@ -5,7 +5,7 @@ import { Locale } from "locales/types";
 import { getI18n } from "locales/server";
 
 import { getPublicPrograms } from "../actions/get-public-programs.action";
-import { ProgramCard } from "./program-card";
+// import { ProgramCard } from "./program-card";
 
 interface ProgramsPageProps {
   locale: Locale;
@@ -61,7 +61,7 @@ export async function ProgramsPage({ locale }: ProgramsPageProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {programs.map((program, index) => (
                 <div className="relative" key={program.id}>
-                  <ProgramCard featured={index === 0} locale={locale} program={program} size="large" />
+                  {/* <ProgramCard featured={index === 0} locale={locale} program={program} size="large" /> */}
                 </div>
               ))}
             </div>

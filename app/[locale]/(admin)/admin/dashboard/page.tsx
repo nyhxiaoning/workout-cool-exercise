@@ -57,8 +57,57 @@ async function getDashboardStats() {
   };
 }
 
+const mockDashboardStats = {
+  totalUsers: 1285,
+  activeUsers: 847,
+  newUsersToday: 23,
+
+  stats: {
+    dailyActiveUsers: {
+      today: 342,
+      change: 5.2, // percentage change from yesterday
+      trend: "up",
+    },
+    workoutSessions: {
+      total: 15783,
+      thisMonth: 2341,
+      thisWeek: 543,
+    },
+    popularWorkouts: [
+      { name: "Full Body HIIT", count: 234 },
+      { name: "Core Strength", count: 187 },
+      { name: "Yoga Flow", count: 156 },
+      { name: "Upper Body", count: 132 },
+    ],
+    userRetention: {
+      weekly: 78, // percentage
+      monthly: 65, // percentage
+    },
+    revenue: {
+      total: 25890.5,
+      thisMonth: 3245.75,
+      subscriptionActive: 456,
+    },
+  },
+  recentActivity: [
+    {
+      id: 1,
+      type: "new_signup",
+      user: "user123",
+      timestamp: "2024-01-20T09:23:15Z",
+    },
+    {
+      id: 2,
+      type: "completed_workout",
+      user: "user456",
+      timestamp: "2024-01-20T09:20:00Z",
+    },
+  ],
+};
+
 async function DashboardStats() {
-  const stats = await getDashboardStats();
+  // const stats = await getDashboardStats();
+  const stats = mockDashboardStats;
 
   return (
     <div className="grid gap-4 md:gap-6">
@@ -76,7 +125,7 @@ async function DashboardStats() {
                 <h3 className="text-3xl font-bold text-gray-900 dark:text-white">{stats.totalUsers.toLocaleString()}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   <p className="text-xs text-gray-600 dark:text-gray-300">Utilisateurs</p>
-                  <span className="font-semibold text-green-600 dark:text-green-400">+{stats.recentUsers}</span> cette semaine
+                  <span className="font-semibold text-green-600 dark:text-green-400">+USER</span> cette semaine
                 </p>
               </div>
               <div className="transition-transform duration-200 group-hover:rotate-6">
@@ -100,9 +149,9 @@ async function DashboardStats() {
                 />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalWorkoutSessions.toLocaleString()}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">stats.totalWorkoutSessions.toLocaleString()</h3>
             <p className="text-xs text-gray-600 dark:text-gray-300">Sessions</p>
-            <p className="text-xs text-green-600 dark:text-green-400">+{stats.recentWorkouts} cette semaine</p>
+            <p className="text-xs text-green-600 dark:text-green-400">+stats.recentWorkouts cette semaine</p>
           </div>
         </div>
       </div>
@@ -123,7 +172,7 @@ async function DashboardStats() {
                 />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">{stats.totalPrograms.toLocaleString()}</h3>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">stats.totalPrograms.toLocaleString()</h3>
             <p className="text-xs text-gray-600 dark:text-gray-300">Programmes</p>
           </div>
         </div>
@@ -141,7 +190,7 @@ async function DashboardStats() {
                 />
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{stats.totalExercises.toLocaleString()}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">stats.totalExercises.toLocaleString()</h3>
             <p className="text-xs text-gray-600 dark:text-gray-300">Exercices</p>
           </div>
         </div>
@@ -160,7 +209,7 @@ async function DashboardStats() {
                 />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white">{stats.activeSubscriptions}</h3>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">stats.activeSubscriptions</h3>
             <p className="text-xs text-gray-600 dark:text-gray-300">Abonnés</p>
           </div>
         </div>
@@ -217,9 +266,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <Suspense fallback={<DashboardStatsLoading />}>
-        <DashboardStats />
-      </Suspense>
+      <Suspense fallback={<DashboardStatsLoading />}>{/* <DashboardStats /> */}</Suspense>
     </div>
   );
 }

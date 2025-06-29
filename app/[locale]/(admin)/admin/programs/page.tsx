@@ -14,9 +14,7 @@ export default function AdminPrograms() {
         <CreateProgramButton />
       </div>
 
-      <Suspense fallback={<div>Loading programs...</div>}>
-        <ProgramsList />
-      </Suspense>
+      <Suspense fallback={<div>Loading programs...</div>}>{/* <ProgramsList /> */}</Suspense>
     </div>
   );
 }

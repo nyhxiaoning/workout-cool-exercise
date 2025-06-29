@@ -31,19 +31,19 @@ export const SOCIAL_FIELD_PLACEHOLDERS: Record<string, string> = {
   phone: "ex: +33612345678",
 };
 
-export const SOCIAL_FIELD_ICONS: Record<string, React.ReactNode> = {
-  x: <FaXTwitter className="h-5 w-5 text-[#000]" />,
-  facebook: <FaFacebook className="h-5 w-5 text-[#1877f3]" />,
-  email: <FaEnvelope className="h-5 w-5 text-[#80b0f4]" />,
-  whatsapp: <FaWhatsapp className="h-5 w-5 text-[#25d366]" />,
-  website: <FaGlobe className="h-5 w-5 text-[#334155]" />,
-  phone: <FaPhone className="h-5 w-5 text-[#66e534]" />,
-  youtube: <FaYoutube className="h-5 w-5 text-[#ff0000]" />,
-  linkedin: <FaLinkedin className="h-5 w-5 text-[#0077b5]" />,
-  snapchat: <FaSnapchat className="h-5 w-5 text-[#fffc00]" />,
-  instagram: <FaInstagram className="h-5 w-5 text-[#e1306c]" />,
-  tiktok: <FaTiktok className="h-5 w-5 text-black" />,
-  threads: <FaThreads className="h-5 w-5 text-black" />,
+export const SOCIAL_FIELD_ICONS = {
+  x: <div className="h-5 w-5 text-[#000]" ></div>,
+  facebook: <div className="h-5 w-5 text-[#1877f3]" ></div>,
+  email: <div className="h-5 w-5 text-[#80b0f4]" ></div>,
+  whatsapp: <div className="h-5 w-5 text-[#25d366]" ></div>,
+  website: <div className="h-5 w-5 text-[#334155]" ></div>,
+  phone: <div className="h-5 w-5 text-[#66e534]" ></div>,
+  youtube: <div className="h-5 w-5 text-[#ff0000]"></div>,
+  linkedin: <div className="h-5 w-5 text-[#0077b5]" ></div>,
+  snapchat: <div className="h-5 w-5 text-[#fffc00]" ></div>,
+  instagram: <div className="h-5 w-5 text-[#e1306c]" ></div>,
+  tiktok: <div className="h-5 w-5 text-black" ></div>,
+  threads: <div className="h-5 w-5 text-black" ></div>,
 };
 
 export const SOCIAL_PLATFORMS = (t: TFunction) =>

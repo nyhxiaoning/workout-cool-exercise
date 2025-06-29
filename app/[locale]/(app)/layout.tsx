@@ -15,7 +15,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <Header />
       <div className="flex-1 overflow-auto flex flex-col">{children}</div>
       <BottomNavigation />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
